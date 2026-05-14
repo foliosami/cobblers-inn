@@ -65,9 +65,9 @@ const DEFAULT_CONTENT = {
   faqBtn: "Discover More",
 
   footLogo: "A Cobbler's Inn",
-  footPhone: "+44 20 7946 0012",
-  footEmail: "info@thornwoodandsons.co.uk",
-  footAddr: "14 Cobbler's Court, London SW1Y 6HQ",
+  footPhone: "+61 7 3844 5566",
+  footEmail: "info@cobblersinn.com.au",
+  footAddr: "Level 1/79 Vulture St, West End QLD 4101",
 };
 
 export default function useEditMode() {

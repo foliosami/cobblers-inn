@@ -102,7 +102,16 @@ export default function Nav({ editMode, onToggleEdit }) {
           {editMode ? "Exit Edit" : "Edit"}
         </button>
         <span className="nav-contact">
-          <Pill variant="cream">Contact Us</Pill>
+          <Pill
+            variant="cream"
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
+          >
+            Contact Us
+          </Pill>
         </span>
       </div>
     </motion.nav>
