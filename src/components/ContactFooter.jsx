@@ -1,4 +1,3 @@
-import Pill from "./Pill";
 import ZoomPhoto from "./ZoomPhoto";
 import E from "./E";
 
@@ -71,48 +70,41 @@ export default function ContactFooter({
             </E>
           </div>
 
-          <form onSubmit={(e) => e.preventDefault()}>
-            {[
-              { id: "f-email", label: "Email", type: "email" },
-              { id: "f-name", label: "First Name", type: "text" },
-              { id: "f-msg", label: "Message", type: "text" },
-            ].map((f) => (
-              <div key={f.id} style={{ marginBottom: 20 }}>
-                <label
-                  htmlFor={f.id}
-                  style={{
-                    display: "block",
-                    fontSize: 10,
-                    letterSpacing: "0.15em",
-                    textTransform: "uppercase",
-                    color: "var(--lth-lt)",
-                    marginBottom: 6,
-                    fontWeight: 400,
-                  }}
+          {[
+            { id: "hoursMon", day: "Monday" },
+            { id: "hoursTue", day: "Tuesday" },
+            { id: "hoursWed", day: "Wednesday" },
+            { id: "hoursThu", day: "Thursday" },
+            { id: "hoursFri", day: "Friday" },
+            { id: "hoursSat", day: "Saturday" },
+            { id: "hoursSun", day: "Sunday" },
+          ].map((row) => (
+            <div
+              key={row.id}
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: 16,
+                padding: "8px 0",
+                borderBottom: "1px solid rgba(92,58,30,0.10)",
+                fontSize: 13,
+                fontWeight: 300,
+                color: "var(--lth)",
+              }}
+            >
+              <span>{row.day}</span>
+              <span style={{ color: "var(--lth-lt)" }}>
+                <E
+                  id={row.id}
+                  editMode={editMode}
+                  selectedId={selectedId}
+                  onSelect={onSelect}
                 >
-                  {f.label}
-                </label>
-                <input
-                  id={f.id}
-                  type={f.type}
-                  style={{
-                    width: "100%",
-                    background: "transparent",
-                    border: "none",
-                    borderBottom: "1px solid rgba(92,58,30,0.22)",
-                    padding: "8px 0",
-                    fontSize: 13,
-                    color: "var(--lth)",
-                    outline: "none",
-                    fontWeight: 300,
-                  }}
-                />
-              </div>
-            ))}
-            <Pill variant="ink" type="submit">
-              Send Message
-            </Pill>
-          </form>
+                  {content[row.id]}
+                </E>
+              </span>
+            </div>
+          ))}
         </div>
 
         <div
@@ -176,19 +168,6 @@ export default function ContactFooter({
               {content.footAddr}
             </E>
           </p>
-          <div
-            style={{
-              fontSize: 11,
-              color: "rgba(92,58,30,0.55)",
-              letterSpacing: "0.05em",
-              lineHeight: 1.9,
-            }}
-          >
-            <a href="#" style={{ marginRight: 14 }}>
-              Privacy Policy
-            </a>
-            <a href="#">Accessibility</a>
-          </div>
         </div>
       </footer>
     </>

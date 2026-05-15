@@ -1,5 +1,4 @@
 import Reveal from "./Reveal";
-import Pill from "./Pill";
 import E from "./E";
 
 export default function FAQ({ content, editMode, selectedId, onSelect }) {
@@ -114,20 +113,6 @@ export default function FAQ({ content, editMode, selectedId, onSelect }) {
         </Reveal>
       ))}
 
-      <Reveal delay={0.4}>
-        <div style={{ display: "inline-block", marginTop: 36 }}>
-          <Pill variant="ghost">
-            <E
-              id="faqBtn"
-              editMode={editMode}
-              selectedId={selectedId}
-              onSelect={onSelect}
-            >
-              {content.faqBtn}
-            </E>
-          </Pill>
-        </div>
-      </Reveal>
     </section>
   );
 }

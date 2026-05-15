@@ -8,7 +8,6 @@ import {
   animate,
 } from "motion/react";
 import Reveal from "./Reveal";
-import Pill from "./Pill";
 import E from "./E";
 
 function parseStat(s) {
@@ -187,21 +186,6 @@ export default function About({ content, editMode, selectedId, onSelect }) {
             </E>
           </p>
         </Reveal>
-        <Reveal delay={0.28}>
-          <div style={{ display: "inline-block" }}>
-            <Pill variant="ghost">
-              <E
-                id="aboutBtn"
-                editMode={editMode}
-                selectedId={selectedId}
-                onSelect={onSelect}
-              >
-                {content.aboutBtn}
-              </E>
-            </Pill>
-          </div>
-        </Reveal>
-
         <motion.div
           variants={staggerContainer}
           initial="hidden"

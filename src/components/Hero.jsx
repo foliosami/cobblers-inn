@@ -1,6 +1,45 @@
-import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import ZoomPhoto from "./ZoomPhoto";
 import E from "./E";
+
+const HERO_SLIDES = ["/hero2.png", "/hero3.png"];
+
+function HeroCarousel() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % HERO_SLIDES.length),
+      4000,
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={HERO_SLIDES[index]}
+          src={HERO_SLIDES[index]}
+          alt="Master cobbler hand-stitching a leather Oxford"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.4, ease: "easeInOut" }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+            display: "block",
+          }}
+        />
+      </AnimatePresence>
+    </div>
+  );
+}
 
 function WordReveal({ text, baseDelay = 0 }) {
   const words = text.split(" ");
@@ -109,17 +148,7 @@ export default function Hero({ content, editMode, selectedId, onSelect }) {
       </div>
 
       <ZoomPhoto height="clamp(280px, 40vw, 420px)">
-        <img
-          src="/hero2.png"
-          alt="Master cobbler hand-stitching a leather Oxford"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center",
-            display: "block",
-          }}
-        />
+        <HeroCarousel />
       </ZoomPhoto>
     </section>
   );

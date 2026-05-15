@@ -11,8 +11,7 @@ const DEFAULT_CONTENT = {
   aboutH: "About Us",
   aboutLabel: "Where It All Started",
   aboutP:
-    "Ernest Thornwood opened the first workshop on Jermyn Street in 1923, armed with a last, a hammer, and an unyielding belief that a well-made shoe deserved a long life. Today, his granddaughter Clara leads the fourth generation using the same techniques — hand-stitching, wooden lasts, bench-grade leather.",
-  aboutBtn: "About Us",
+    "John Smith opened the first workshop on Jermyn Street in 1923, armed with a last, a hammer, and an unyielding belief that a well-made shoe deserved a long life. Today, his granddaughter Clara leads the fourth generation using the same techniques — hand-stitching, wooden lasts, bench-grade leather.",
   stat1N: "100+",
   stat1L: "Years of craft",
   stat2N: "4th",
@@ -38,8 +37,6 @@ const DEFAULT_CONTENT = {
   svc4Tag: "Mirror Finish",
   svc4Desc:
     "Deep clean, wax polish and hand-burnished mirror shine using imported creams and antique finishing.",
-  svcBtn: "Discover More",
-
   testiH: "Testimonials",
   testi1:
     "The craftsmanship and attention to detail at this workshop exceeded every expectation. Highly recommend.",
@@ -62,12 +59,18 @@ const DEFAULT_CONTENT = {
   faq3Q: "Can I request a specific leather?",
   faq3A:
     "Absolutely. We stock Horween Chromexcel and Dublin leather, and can source other bench-grade options on request.",
-  faqBtn: "Discover More",
-
-  footLogo: "A Cobbler's Inn",
+  footLogo: "Opening Hours",
   footPhone: "+61 7 3844 5566",
   footEmail: "info@cobblersinn.com.au",
   footAddr: "Level 1/79 Vulture St, West End QLD 4101",
+
+  hoursMon: "7:30 am – 5:30 pm",
+  hoursTue: "7:30 am – 5:30 pm",
+  hoursWed: "7:30 am – 5:30 pm",
+  hoursThu: "7:30 am – 5:30 pm",
+  hoursFri: "7:30 am – 5:30 pm",
+  hoursSat: "7:30 am – 1:00 pm",
+  hoursSun: "Closed",
 };
 
 export default function useEditMode() {

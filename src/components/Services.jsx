@@ -1,5 +1,4 @@
 import Reveal from "./Reveal";
-import Pill from "./Pill";
 import E from "./E";
 
 export default function Services({ content, editMode, selectedId, onSelect }) {
@@ -135,20 +134,6 @@ export default function Services({ content, editMode, selectedId, onSelect }) {
         </Reveal>
       ))}
 
-      <Reveal delay={0.45}>
-        <div style={{ display: "inline-block", marginTop: 36 }}>
-          <Pill variant="ghost">
-            <E
-              id="svcBtn"
-              editMode={editMode}
-              selectedId={selectedId}
-              onSelect={onSelect}
-            >
-              {content.svcBtn}
-            </E>
-          </Pill>
-        </div>
-      </Reveal>
     </section>
   );
 }
