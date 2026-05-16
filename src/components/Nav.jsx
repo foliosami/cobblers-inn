@@ -68,39 +68,41 @@ export default function Nav({ editMode, onToggleEdit }) {
           gap: 10,
         }}
       >
-        <button
-          onClick={onToggleEdit}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            padding: "8px 16px",
-            borderRadius: 999,
-            fontSize: 11,
-            fontWeight: 400,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            background: editMode ? "var(--lth)" : "var(--ink)",
-            border: editMode
-              ? "1px solid var(--gold)"
-              : "1px solid var(--lth-md)",
-            color: editMode ? "var(--gold)" : "rgba(245,239,224,0.7)",
-            transition: "all 0.25s",
-            minHeight: 36,
-          }}
-        >
-          <span
-            aria-hidden="true"
+        {import.meta.env.DEV && (
+          <button
+            onClick={onToggleEdit}
             style={{
-              width: 5,
-              height: 5,
-              borderRadius: "50%",
-              background: editMode ? "var(--gold)" : "rgba(245,239,224,0.4)",
-              transition: "background 0.25s",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "8px 16px",
+              borderRadius: 999,
+              fontSize: 11,
+              fontWeight: 400,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              background: editMode ? "var(--lth)" : "var(--ink)",
+              border: editMode
+                ? "1px solid var(--gold)"
+                : "1px solid var(--lth-md)",
+              color: editMode ? "var(--gold)" : "rgba(245,239,224,0.7)",
+              transition: "all 0.25s",
+              minHeight: 36,
             }}
-          />
-          {editMode ? "Exit Edit" : "Edit"}
-        </button>
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                width: 5,
+                height: 5,
+                borderRadius: "50%",
+                background: editMode ? "var(--gold)" : "rgba(245,239,224,0.4)",
+                transition: "background 0.25s",
+              }}
+            />
+            {editMode ? "Exit Edit" : "Edit"}
+          </button>
+        )}
         <span className="nav-contact">
           <Pill
             variant="cream"
